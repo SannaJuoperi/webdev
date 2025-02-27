@@ -1,5 +1,6 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,9 @@ db.run(`CREATE TABLE IF NOT EXISTS users (
   email TEXT UNIQUE,
   phone TEXT
 )`);
+
+// Palvele index.html-tiedosto
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Luo uusi käyttäjä (Create)
 app.post('/users', (req, res) => {
