@@ -37,7 +37,7 @@ export default function ReadDeleteUsers({ refresh, buttonClass = "btn btn-danger
                 {users.map((user) => (
                     <div
                         key={user.id}
-                        className="d-flex align-items-center justify-content-between mb-3 p-2 border rounded bg-light"
+                        className="d-flex align-items-center justify-content-between mb-3 p-2 border rounded bg-light user-item"
                     >
                         <div>
                             <strong>{user.name}</strong> - {user.email} - {user.phone}
